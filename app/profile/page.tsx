@@ -3,7 +3,7 @@ import BottomNav from '../components/BottomNav';
 import NavbarMobile from '../components/NavbarMobile';
 import NavigationBar from '../components/Navbar';
 
-export default function HistoryUser() {
+export default function ProfileUser() {
   return (
 		<div>
 			<div>
@@ -14,7 +14,7 @@ export default function HistoryUser() {
       </div>
       <div>
 				<NavbarMobile />
-			<p>INI HALAMAN RIWAYAT</p>
+			<p>INI PROFILE</p>
       </div>
 		</div>
 	);
