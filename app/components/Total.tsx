@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 
 const useCounter = (total: number, startCounting: boolean) => {
 	const [count, setCount] = useState(0);
@@ -54,9 +56,9 @@ export default function Total() {
 		<div
 			ref={containerRef}
 			className="w-[100%] flex justify-center bg-white shadow-red-100 mt-5 absolute">
-			<div className="bg-white mx-5 sm:mx-0 rounded-xl shadow-2xl shadow-red-100 px-5 py-5 flex flex-row justify-center items-center gap-5 md:gap-20">
+			<div className="bg-white mx-5 sm:mx-0 rounded-xl shadow-2xl shadow-red-100 border px-5 py-5 flex flex-row justify-center items-center gap-5 md:gap-20">
 				<div className="flex flex-col justify-center items-center gap-2">
-					<LibraryBooksIcon className="text-[30px] md:text-[50px]" />
+					<LibraryBooksIcon className="text-[30px] md:text-[45px]" />
 					<h1 className="font-major font-extrabold text-center text-[9px] md:text-xl">
 						Total buku
 					</h1>
@@ -65,7 +67,7 @@ export default function Total() {
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center gap-2">
-					<LibraryBooksIcon className="text-[30px] md:text-[50px]" />
+					<PeopleAltIcon className="text-[30px] md:text-[45px]" />
 					<h1 className="font-major font-extrabold text-center text-[9px] md:text-xl">
 						Total user
 					</h1>
@@ -74,7 +76,7 @@ export default function Total() {
 					</p>
 				</div>
 				<div className="flex flex-col justify-center items-center gap-2">
-					<LibraryBooksIcon className="text-[30px] md:text-[50px]" />
+					<ReceiptLongIcon className="text-[30px] md:text-[45px]" />
 					<h1 className="font-major font-extrabold text-center text-[9px] md:text-xl">
 						Total pinjam
 					</h1>

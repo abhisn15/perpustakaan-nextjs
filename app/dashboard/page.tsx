@@ -3,7 +3,6 @@ import BottomNav from "../components/BottomNav";
 import NavigationBar from "../components/Navbar";
 import NavbarMobile from "../components/NavbarMobile";
 import Footer from "../components/footer";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import Total from "../components/Total";
 import Link from "next/link";
 
@@ -16,20 +15,20 @@ export default function Dashboard() {
 			<div className="">
 				<NavigationBar />
 				<NavbarMobile />
-				<div className="h-[200vh] sm:h-[100vh]">
+				<div className="h-[140dvh]">
 					<div className="text-center bg-[url(/bg-elegant.avif)] xl:bg-contain max-[1288px]:object-contain max-[1288px]:bg-cover flex flex-col justify-center items-center">
-						<div className="flex flex-col md:flex-row gap-2 w-[90%] sm:w-[100%] justify-center items-center">
+						<div className="flex flex-col md:flex-row gap-2 md: gap-10 w-[90%] justify-center items-center pt-4">
 							<img
-								className="md:hidden"
+								className="md:hidden mb-2"
 								src="/buku.png"
 								alt="buku"
-								width="350"
+								width="150"
 							/>
 							<div className="flex flex-col justify-center items-center gap-10">
 								<h1 className="font-major font-bold text-xl sm:text-2xl">
 									SeLamaT daTanG dI WebSite PerpusTaKaan Kami
 								</h1>
-								<p className="mx-14 font-poppins text-center">
+								<p className="mx-14 font-poppins text-center xl:w-[70%]">
 									Pinjam buku dengan mudah menggunakan website library kami,
 									ayoo tunggu apalagi pinjam buku favoritemu sekarang juga.
 								</p>
