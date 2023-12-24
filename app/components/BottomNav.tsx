@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HomeIcon from "@mui/icons-material/Home";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import LibraryBooksIcon from "@mui/icons-material/MenuBook";
 import HistoryIcon from "@mui/icons-material/History";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Link from "next/link";
@@ -50,44 +50,37 @@ export default function BottomNav() {
 	return (
 		<Box
 			sx={{ width: "100%" }}
-			className="sm:hidden fixed bottom-0 notranslate border pb-4">
-			<BottomNavigation
-				showLabels
-				value={value}
-				onChange={(event, newValue) => {
-					setValue(newValue);
-				}}>
-				<div className="w-[90%] flex flex-row justify-between items-center ">
+			className="md:hidden fixed bottom-0 notranslate border bg-white pb-4 z-10">
+				<div className="w-[100%] flex flex-row justify-between items-center">
 					<Link href="/dashboard" passHref>
 						<BottomNavigationAction
 							label="Home"
 							icon={<HomeIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 1 ? "blue" : "inherit" }}
+							sx={{ color: !loading && value === 1 ? "navy" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/books" passHref>
 						<BottomNavigationAction
 							label="Buku"
 							icon={<LibraryBooksIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 2 ? "blue" : "inherit" }}
+							sx={{ color: !loading && value === 2 ? "navy" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/history" passHref>
 						<BottomNavigationAction
 							label="Riwayat"
 							icon={<HistoryIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 3 ? "blue" : "inherit" }}
+							sx={{ color: !loading && value === 3 ? "navy" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/profile" passHref>
 						<BottomNavigationAction
 							label="Profile"
 							icon={<AccountCircleIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 4 ? "blue" : "inherit" }}
+							sx={{ color: !loading && value === 4 ? "navy" : "inherit" }}
 						/>
 					</Link>
 				</div>
-			</BottomNavigation>
 		</Box>
 	);
 }

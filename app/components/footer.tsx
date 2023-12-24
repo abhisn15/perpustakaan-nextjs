@@ -1,22 +1,21 @@
 'use client'
 import { FaHeart } from 'react-icons/fa';
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer>
-      <small>
-        &copy; {new Date().getFullYear()} made with{' '}
+    <footer className='min-[320px]:h-[15vh] min-[764px]:h-[5vh]'>
+      <small className='flex flex-row gap-2 justify-center items-center'>
+        &copy; {new Date().getFullYear()} Developed{' '}
         <FaHeart style={{ color: 'red' }} /> by -{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://granada.com.gt/es/"
         >
-          Fábrica Granada
+          Abhi Surya Nugroho
         </a>
       </small>
     </footer>
   );
 }
 
-export default Footer;

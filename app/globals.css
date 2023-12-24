@@ -7,8 +7,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -19,10 +17,36 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .css-1gh6k7f-MuiBottomNavigationAction-label {
   opacity: 1 !important;
 }
 
 .Mui-selected{
 background: aqua;
+}
+
+.css-dqscbn-MuiSvgIcon-root {
+  font-size: 35px;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+.css-1wnsr1i {
+  width: 320px;
+}
+
+@media only screen and (min-width: 768px) {
+  .css-dqscbn-MuiSvgIcon-root {
+    font-size: 50px !important;
+  }
+  .css-1wnsr1i {
+    width: 400px;
+  }
 }

@@ -2,20 +2,24 @@ import React from 'react'
 import BottomNav from '../components/BottomNav';
 import NavbarMobile from '../components/NavbarMobile';
 import NavigationBar from '../components/Navbar';
+import Footer from '../components/footer';
 
 export default function ProfileUser() {
   return (
 		<div>
 			<div>
-				<NavigationBar />
-			</div>
-			<div>
 				<BottomNav />
-      </div>
-      <div>
+			</div>
+			<div className="">
+				<NavigationBar />
 				<NavbarMobile />
-			<p>INI PROFILE</p>
-      </div>
+				<div className="h-[100dvh]">
+					<p>INI HALAMAN PROFILE</p>
+				</div>
+				<div className="">
+					<Footer />
+				</div>
+			</div>
 		</div>
 	);
 }

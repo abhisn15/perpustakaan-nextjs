@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Navbar,
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
-	Link,
 	Input,
 	DropdownItem,
 	DropdownTrigger,
@@ -13,34 +12,66 @@ import {
 	DropdownMenu,
 	Avatar,
 } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo";
 import { SearchIcon } from "./SearchIcon";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Link from "next/link";
+import { Box, Button, Modal, Typography } from "@mui/material";
+
+const style = {
+	position: "absolute" as "absolute",
+	top: "50%",
+	left: "50%",
+	transform: "translate(-50%, -50%)",
+	width: 400,
+	bgcolor: "background.paper",
+	border: "2px solid #000",
+	boxShadow: 24,
+	p: 4,
+};
 
 export default function NavigationBar() {
+	const [activePath, setActivePath] = useState("");
+	const [open, setOpen] = React.useState(false);
+	const handleOpen = () => setOpen(true);
+	const handleClose = () => setOpen(false);
+
+	useEffect(() => {
+		setActivePath(window.location.pathname);
+	}, []);
+
+	const isActive = (path: string): boolean => {
+		return activePath === path;
+	};
+
 	return (
-		<Navbar isBordered className="hidden min-[768px]:flex">
-			<NavbarContent justify="start">
+		<Navbar
+			shouldHideOnScroll
+			className="hidden border-b-2 min-[768px]:flex bg-white">
+			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
-					<AcmeLogo />
-					<p className="hidden sm:block font-bold text-inherit">ACME</p>
+					<Link href="/dashboard">
+						<h1 className="hidden font-major sm:block font-bold text-inherit">
+							bIpErp
+						</h1>
+					</Link>
 				</NavbarBrand>
-				<NavbarContent className="hidden sm:flex gap-3">
-					<NavbarItem>
-						<Link color="foreground" href="#">
-							Features
-						</Link>
-					</NavbarItem>
-					<NavbarItem isActive>
-						<Link href="#" aria-current="page" color="secondary">
-							Customers
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link color="foreground" href="#">
-							Integrations
-						</Link>
-					</NavbarItem>
-				</NavbarContent>
+			</NavbarContent>
+			<NavbarContent className="w-[100%] flex !justify-end gap-10">
+				<NavbarItem isActive={isActive("/dashboard")}>
+					<Link color="foreground" href="/dashboard">
+						Home
+					</Link>
+				</NavbarItem>
+				<NavbarItem isActive={isActive("/books")}>
+					<Link href="/books" aria-current="page">
+						Buku
+					</Link>
+				</NavbarItem>
+				<NavbarItem isActive={isActive("/history")}>
+					<Link color="foreground" href="/history">
+						Riwayat
+					</Link>
+				</NavbarItem>
 			</NavbarContent>
 
 			<NavbarContent as="div" className="items-center" justify="end">
@@ -52,11 +83,30 @@ export default function NavigationBar() {
 						inputWrapper:
 							"h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
 					}}
+					className="border-2 rounded-md"
 					placeholder="Type to search..."
 					size="sm"
 					startContent={<SearchIcon size={18} />}
 					type="search"
 				/>
+				<Button onClick={handleOpen}>
+					{" "}
+					<ShoppingCartIcon sx={{ fontSize: "30px", color: 'black' }} />
+				</Button>
+				<Modal
+					open={open}
+					onClose={handleClose}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description">
+					<Box sx={style}>
+						<Typography id="modal-modal-title" variant="h6" component="h2">
+							Text in a modal
+						</Typography>
+						<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+						</Typography>
+					</Box>
+				</Modal>
 				<Dropdown placement="bottom-end">
 					<DropdownTrigger>
 						<Avatar
@@ -73,20 +123,24 @@ export default function NavigationBar() {
 						aria-label="Profile Actions"
 						variant="flat"
 						className="rounded-md border">
-						<DropdownItem key="profile" className="h-14 gap-2">
+						<DropdownItem key="profile" className="h-14 gap-2 cursor-default">
 							<p className="font-semibold">Signed in as</p>
 							<p className="font-semibold">zoey@example.com</p>
 						</DropdownItem>
-						<DropdownItem key="settings" className="hover:underline text">
-							Profile
+						<DropdownItem
+							key="settings"
+							className="rounded-md border-2 border-white hover:border-2 hover:border-black hover:bg-[#e6e6e6] ">
+							<Link className="w-[100%]" href="/profile">
+								<p>Profile</p>
+							</Link>
 						</DropdownItem>
-						<DropdownItem key="team_settings">Team Settings</DropdownItem>
-						<DropdownItem key="analytics">Analytics</DropdownItem>
-						<DropdownItem key="system">System</DropdownItem>
-						<DropdownItem key="configurations">Configurations</DropdownItem>
-						<DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-						<DropdownItem key="logout" color="danger">
-							Log Out
+						<DropdownItem
+							key="logout"
+							color="danger"
+							className="rounded-md border-2 border-white hover:border-2 hover:border-black hover:bg-red-300 hover:text-red-500">
+							<Link className="w-[100%]" href="/profile">
+								<p>Log Out</p>
+							</Link>
 						</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
