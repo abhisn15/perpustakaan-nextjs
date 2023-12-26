@@ -56,28 +56,28 @@ export default function BottomNav() {
 						<BottomNavigationAction
 							label="Home"
 							icon={<HomeIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 1 ? "navy" : "inherit" }}
+							sx={{ color: !loading && value === 1 ? "#40587E" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/books" passHref>
 						<BottomNavigationAction
 							label="Buku"
 							icon={<LibraryBooksIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 2 ? "navy" : "inherit" }}
+							sx={{ color: !loading && value === 2 ? "#40587E" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/history" passHref>
 						<BottomNavigationAction
 							label="Riwayat"
 							icon={<HistoryIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 3 ? "navy" : "inherit" }}
+							sx={{ color: !loading && value === 3 ? "#40587E" : "inherit" }}
 						/>
 					</Link>
 					<Link href="/profile" passHref>
 						<BottomNavigationAction
 							label="Profile"
 							icon={<AccountCircleIcon sx={{ fontSize: 30 }} />}
-							sx={{ color: !loading && value === 4 ? "navy" : "inherit" }}
+							sx={{ color: !loading && value === 4 ? "#40587E" : "inherit" }}
 						/>
 					</Link>
 				</div>
