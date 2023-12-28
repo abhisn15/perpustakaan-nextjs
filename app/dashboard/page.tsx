@@ -11,6 +11,7 @@ export default function Dashboard() {
 		{
 			id: "1",
 			name: "Abhi Surya Nugroho",
+			judul: 'Sikancil Anak yang Nakal',
 			genre: "Fiksi",
 			img_book: "/buku.png",
 			desk: "lorem ipsum dolor sit amet",
@@ -18,6 +19,7 @@ export default function Dashboard() {
 		{
 			id: "2",
 			name: "Abhi Surya Nugroho",
+			judul: 'Doctor Doom - Mereboot Alam Semesta',
 			genre: "Sains Fiksi",
 			img_book: "/buku.png",
 			desk: "lorem ipsum dolor sit amet",
@@ -25,6 +27,7 @@ export default function Dashboard() {
 		{
 			id: "3",
 			name: "Abhi Surya Nugroho",
+			judul: 'Kisah Romansa Habibie & Ainun',
 			genre: "Romansa",
 			img_book: "/buku.png",
 			desk: "lorem ipsum dolor sit amet",
@@ -32,13 +35,15 @@ export default function Dashboard() {
 		{
 			id: "4",
 			name: "Abhi Surya Nugroho",
-			genre: "Thriller, Horor",
+			judul: 'Pamali',
+			genre: "Horor",
 			img_book: "/buku.png",
 			desk: "lorem ipsum dolor sit amet",
 		},
 		{
 			id: "5",
 			name: "Abhi Surya Nugroho",
+			judul: 'Misteri Pohon Beringin',
 			genre: "Misteri",
 			img_book: "/buku.png",
 			desk: "lorem ipsum doilor sit amet",
@@ -53,7 +58,7 @@ export default function Dashboard() {
 			<div className="flex flex-col">
 				<NavigationBar />
 				<NavbarMobile />
-				<div className="min-[300px]:h-[170dvh] min-[340px]:h-[110dvh] min-[370px]:h-[80dvh] md:h-[100dvh] xl:h-[90dvh]">
+				<div className="md:h-[100dvh] xl:h-[90dvh]">
 					<div className="text-center bg-[url('/bg-elegant.avif')] md:h-[70dvh] xl:h-[60dvh] xl:bg-contain max-[1288px]:object-contain max-[1288px]:bg-cover flex flex-col justify-center items-center">
 						<div className="flex flex-col md:flex-row gap-2 md:gap-10 w-[90%] justify-center items-center pt-4">
 							<img
@@ -81,14 +86,14 @@ export default function Dashboard() {
 					</div>
 					<Total />
 				</div>
-				<div className="mt-10 min-[370px]:mt-60 min-[391px]:mt-36 sm:mt-0 md:mt-10 text-center text-xl md:text-3xl xl:text-4xl">
-					<h1 className="font-major font-extrabold">PenuLIs</h1>
+				<div className="text-center text-xl mx-2 md:text-3xl xl:text-4xl">
+					<h1 className="font-major font-extrabold">pemInJAmAn buKu TerFAVoriTe</h1>
 				</div>
-				<div className="flex flex-wrap justify-center items-center gap-10 mb-10 mt-16 mx-5">
+				<div className="flex flex-wrap justify-center items-center gap-10 2xl:gap-20 xl:gap-20 mb-10 mt-16 mx-5">
 					{author.map((penulis) => (
 						<div
 							key={penulis.id}
-							className="relative flex w-80 flex-col rounded-xl border-2 bg-white bg-clip-border text-gray-700 shadow-md">
+							className="relative flex w-80 flex-col justify-center items-center rounded-xl border-2 bg-white bg-clip-border text-gray-700 shadow-md">
 							<div className="relative mx-4 -mt-6 h-40 flex justify-center">
 								<div className="drop-shadow-md">
 									<img
@@ -100,9 +105,12 @@ export default function Dashboard() {
 							</div>
 							<div className="p-6 flex flex-col justify-center text-center">
 								<h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-									{penulis.name}
+									{penulis.judul}
 								</h5>
-								<p className="block mt-2 font-sans text-base font-medium leading-relaxed text-inherit antialiased">
+								<p className="block mt-2 font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+									Penulis: {penulis.name}
+								</p>
+								<p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
 									Genre: {penulis.genre}
 								</p>
 								<p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
@@ -123,6 +131,7 @@ export default function Dashboard() {
 					))}
 				</div>
 			</div>
+			<hr className="sm:mb-10 text-black border" />
 			<Footer />
 		</div>
 	);

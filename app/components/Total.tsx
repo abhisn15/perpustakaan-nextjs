@@ -55,7 +55,7 @@ export default function Total() {
 	return (
 		<div
 			ref={containerRef}
-			className="w-[100%] flex justify-center bg-white shadow-red-100 mt-5 absolute">
+			className="w-[100%] flex justify-center bg-white shadow-red-100 mt-5 mb-14">
 			<div className="bg-white mx-5 sm:mx-0 rounded-xl drop-shadow-xl border px-5 py-5 flex flex-row justify-center items-center gap-5 md:gap-20">
 				<div className="flex flex-col justify-center items-center gap-2">
 					<LibraryBooksIcon className="text-[30px] md:text-[35px]" />

@@ -50,7 +50,7 @@ export default function BottomNav() {
 	return (
 		<Box
 			sx={{ width: "100%" }}
-			className="md:hidden fixed bottom-0 notranslate border bg-white pb-4 z-10">
+			className="xl:hidden fixed bottom-0 notranslate border bg-white pb-4 z-10">
 				<div className="w-[100%] flex flex-row justify-between items-center">
 					<Link href="/dashboard" passHref>
 						<BottomNavigationAction

@@ -46,7 +46,7 @@ export default function NavigationBar() {
 	return (
 		<Navbar
 			shouldHideOnScroll
-			className="hidden border-b-2 min-[768px]:flex bg-white">
+			className="hidden border-b-2 xl:flex bg-white">
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
