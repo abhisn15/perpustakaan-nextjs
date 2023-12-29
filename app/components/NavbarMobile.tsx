@@ -35,7 +35,10 @@ export default function NavbarMobile() {
 		<Navbar shouldHideOnScroll className="xl:hidden border-b-2 bg-white">
 			<NavbarBrand className="flex justify-between gap-2">
 				<Link href="/dashboard">
-					<h1 className="font-bold font-major text-inherit">bIpErp</h1>
+					<h1 className="font-bold font-major text-inherit">
+						b<span className="text-[#E2725B]">I</span>p
+						<span className="text-[#E2725B]">E</span>rp
+					</h1>
 				</Link>
 				<Input
 					classNames={{

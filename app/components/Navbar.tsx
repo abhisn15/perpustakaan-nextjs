@@ -44,14 +44,13 @@ export default function NavigationBar() {
 	};
 
 	return (
-		<Navbar
-			shouldHideOnScroll
-			className="hidden border-b-2 xl:flex bg-white">
+		<Navbar shouldHideOnScroll className="hidden border-b-2 xl:flex bg-white">
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
 						<h1 className="hidden font-major sm:block font-bold text-inherit">
-							bIpErp
+							b<span className="text-[#E2725B]">i</span>p
+							<span className="text-[#E2725B]">E</span>rp
 						</h1>
 					</Link>
 				</NavbarBrand>
@@ -91,7 +90,7 @@ export default function NavigationBar() {
 				/>
 				<Button onClick={handleOpen}>
 					{" "}
-					<ShoppingCartIcon sx={{ fontSize: "30px", color: 'black' }} />
+					<ShoppingCartIcon sx={{ fontSize: "30px", color: "black" }} />
 				</Button>
 				<Modal
 					open={open}
