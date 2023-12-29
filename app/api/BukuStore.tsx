@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Filter from '../components/Filter';
 
-export default function Books() {
+export default function BukuStore() {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
 
 	const getAllBuku = [
@@ -88,7 +88,7 @@ export default function Books() {
 		},
 	];
 
-	const handleGenreSelect = (genre: string) => {
+	const handleGenreSelect = (genre: string | null) => {
 		setSelectedGenre(genre);
 	};
 

@@ -3,11 +3,9 @@ import BottomNav from "../components/BottomNav";
 import NavbarMobile from "../components/NavbarMobile";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/footer";
-import Filter from "../components/Filter";
-import Books from "../api/Books";
+import BukuStore from "../api/BukuStore";
 
-export default function Buku() {
-
+export default function Books() {
 	return (
 		<div>
 			<div>
@@ -17,7 +15,7 @@ export default function Buku() {
 				<NavigationBar />
 				<NavbarMobile />
 				<div className="h-[100dvh]">
-					<Books />
+					<BukuStore />
 					<hr className="border"></hr>
 					<Footer />
 				</div>

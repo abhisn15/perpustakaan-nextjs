@@ -58,7 +58,7 @@ export default function BottomNav() {
 							sx={{ color: !loading && value === 1 ? "#E2725B" : "inherit" }}
 						/>
 					</Link>
-					<Link href="/buku" passHref>
+					<Link href="/books" passHref>
 						<BottomNavigationAction
 							label="Buku"
 							icon={<LibraryBooksIcon sx={{ fontSize: 30 }} />}

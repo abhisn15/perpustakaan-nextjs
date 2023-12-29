@@ -4,11 +4,12 @@ import { BottomSheet, Button } from "@heathmont/moon-core-tw";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
 type FilterProps = {
-	onGenreSelect: (genre: string) => void;
+	onGenreSelect: (genre: string | null) => void;
 };
 
 const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 	const [isFullOpen, setIsFullOpen] = useState(false);
+	const [activeGenre, setActiveGenre] = useState<string | null>(null);
 	
 	const closeFullBottomSheet = () => {
 		setIsFullOpen(false);
@@ -57,7 +58,15 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 	];
 
 	const handleGenreSelection = (genreName: string) => {
-		onGenreSelect(genreName);
+		if (activeGenre === genreName) {
+			// Jika genre yang sama diklik, reset filter
+			setActiveGenre(null);
+			onGenreSelect(null);
+		} else {
+			// Set genre baru sebagai aktif dan terapkan filter
+			setActiveGenre(genreName);
+			onGenreSelect(genreName);
+		}
 		closeFullBottomSheet();
 	};
 
@@ -82,13 +91,16 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 								<div className="flex flex-wrap gap-2 my-4">
 									{genre.map((GenreList) => (
 										<>
-												<button
-													key={GenreList.id}
-													onClick={() => handleGenreSelection(GenreList.name)}
-													
-													className="py-1 px-4 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 hover:bg-[#E2725B] hover:text-white">
-													{GenreList.name}
-												</button>
+											<button
+												key={GenreList.id}
+												onClick={() => handleGenreSelection(GenreList.name)}
+												className={`py-1 px-4 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 ${
+													activeGenre === GenreList.name
+														? "bg-[#E2725B] text-white"
+														: "hover:bg-[#E2725B] hover:text-white"
+												}`}>
+												{GenreList.name}
+											</button>
 										</>
 									))}
 								</div>
