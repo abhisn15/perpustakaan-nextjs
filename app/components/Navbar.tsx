@@ -122,14 +122,14 @@ export default function NavigationBar() {
 					<DropdownMenu
 						aria-label="Profile Actions"
 						variant="flat"
-						className="rounded-md border">
+						className="rounded-md border bg-white">
 						<DropdownItem key="profile" className="h-14 gap-2 cursor-default">
 							<p className="font-semibold">Signed in as</p>
 							<p className="font-semibold">zoey@example.com</p>
 						</DropdownItem>
 						<DropdownItem
 							key="settings"
-							className="rounded-md border-2 border-white hover:border-2 hover:border-black hover:bg-[#e6e6e6] ">
+							className="rounded-md hover:bg-[#e2e2e2] ">
 							<Link className="w-[100%]" href="/profile">
 								<p>Profile</p>
 							</Link>
@@ -137,7 +137,7 @@ export default function NavigationBar() {
 						<DropdownItem
 							key="logout"
 							color="danger"
-							className="rounded-md border-2 border-white hover:border-2 hover:border-black hover:bg-red-300 hover:text-red-500">
+							className="rounded-md hover:bg-red-500 hover:text-white">
 							<Link className="w-[100%]" href="/profile">
 								<p>Log Out</p>
 							</Link>

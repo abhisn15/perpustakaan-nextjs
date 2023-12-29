@@ -7,13 +7,13 @@ import Total from "../components/Total";
 import Link from "next/link";
 
 export default function Dashboard() {
-	const author = [
+	const popular = [
 		{
 			id: "1",
 			name: "Abhi Surya Nugroho",
 			judul: 'Sikancil Anak yang Nakal',
 			genre: "Fiksi",
-			img_book: "/buku.png",
+			img_book: "/buku.avif",
 			desk: "lorem ipsum dolor sit amet",
 		},
 		{
@@ -21,7 +21,7 @@ export default function Dashboard() {
 			name: "Abhi Surya Nugroho",
 			judul: 'Doctor Doom - Mereboot Alam Semesta',
 			genre: "Sains Fiksi",
-			img_book: "/buku.png",
+			img_book: "/buku.avif",
 			desk: "lorem ipsum dolor sit amet",
 		},
 		{
@@ -29,7 +29,7 @@ export default function Dashboard() {
 			name: "Abhi Surya Nugroho",
 			judul: 'Kisah Romansa Habibie & Ainun',
 			genre: "Romansa",
-			img_book: "/buku.png",
+			img_book: "/buku.avif",
 			desk: "lorem ipsum dolor sit amet",
 		},
 		{
@@ -37,7 +37,7 @@ export default function Dashboard() {
 			name: "Abhi Surya Nugroho",
 			judul: 'Pamali',
 			genre: "Horor",
-			img_book: "/buku.png",
+			img_book: "/buku.avif",
 			desk: "lorem ipsum dolor sit amet",
 		},
 		{
@@ -45,7 +45,7 @@ export default function Dashboard() {
 			name: "Abhi Surya Nugroho",
 			judul: 'Misteri Pohon Beringin',
 			genre: "Misteri",
-			img_book: "/buku.png",
+			img_book: "/buku.avif",
 			desk: "lorem ipsum doilor sit amet",
 		},
 	];
@@ -63,7 +63,7 @@ export default function Dashboard() {
 						<div className="flex flex-col md:flex-row gap-2 md:gap-10 w-[90%] justify-center items-center pt-4">
 							<img
 								className="md:hidden mb-2"
-								src="/buku.png"
+								src="/buku.avif"
 								alt="buku"
 								width="150"
 							/>
@@ -72,25 +72,28 @@ export default function Dashboard() {
 									SeLamaT daTanG dI WebSite PerpusTaKaan Kami
 								</h1>
 								<p className="mx-14 font-poppins text-center xl:w-[70%]">
-									Pinjam buku dengan mudah menggunakan website library kami,
-									ayoo tunggu apalagi pinjam buku favoritemu sekarang juga.
+									Pinjam buku dengan mudah menggunakan website perpustakaan
+									kami, ayoo tunggu apalagi pinjam buku favoritemu sekarang
+									juga.
 								</p>
 								<Link href="/books">
-									<button className="bg-white rounded-xl border-2 border-slate-400 border-solid shadow-2xl font-poppins shadow-red-100 px-5 py-3 hover:bg-slate-800 hover:text-white ">
+									<button className="bg-white rounded-xl border-2 border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 px-5 py-3 hover:bg-[#E2725B] hover:text-white">
 										Pinjam Buku Yukk..
 									</button>
 								</Link>
 							</div>
-							<img className="hidden md:flex" src="/buku.png" alt="buku" />
+							<img className="hidden md:flex" src="/buku.avif" alt="buku" />
 						</div>
 					</div>
 					<Total />
 				</div>
 				<div className="text-center text-xl mx-2 md:text-3xl xl:text-4xl">
-					<h1 className="font-major font-extrabold">pemInJAmAn buKu TerFAVoriTe</h1>
+					<h1 className="font-major font-extrabold">
+						pemInJAmAn buKu TerFAVoriTe
+					</h1>
 				</div>
 				<div className="flex flex-wrap justify-center items-center gap-10 2xl:gap-20 xl:gap-20 mb-10 mt-16 mx-5">
-					{author.map((penulis) => (
+					{popular.map((penulis) => (
 						<div
 							key={penulis.id}
 							className="relative flex w-80 flex-col justify-center items-center rounded-xl border-2 bg-white bg-clip-border text-gray-700 shadow-md">
@@ -121,7 +124,7 @@ export default function Dashboard() {
 								<button
 									data-ripple-light="true"
 									type="button"
-									className="select-none rounded-lg bg-slate-800 py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500/20 transition-all hover:shadow-lg hover:shadow-slate-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+									className="select-none rounded-lg bg-[#E2725B] py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
 									<h1 className="font-poppins">
 										<span className="text-md">+</span> Keranjang
 									</h1>

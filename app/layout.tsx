@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<head>
+			<Head>
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Major+Mono+Display:wght@400;700&display=swap"
@@ -25,7 +26,7 @@ export default function RootLayout({
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
 				/>
-			</head>
+			</Head>
 			<body className={inter.className}>{children}</body>
 		</html>
 	);
