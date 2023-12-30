@@ -9,12 +9,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 html {
@@ -25,8 +22,8 @@ html {
   opacity: 1 !important;
 }
 
-.Mui-selected{
-background: aqua;
+.Mui-selected {
+  background: aqua;
 }
 
 .css-dqscbn-MuiSvgIcon-root {
@@ -46,10 +43,31 @@ background: aqua;
   background-color: rgb(159, 159, 159) !important;
 }
 
+.font-major {
+  font-family: 'Major Mono Display',
+  monospace;
+}
+
+@layer components {
+  .border-expand::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #E2725B;
+    transition: width 0.15s ease-out;
+  }
+
+  .border-expand:hover::after {
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .css-dqscbn-MuiSvgIcon-root {
     font-size: 50px !important;
   }
+
   .css-1wnsr1i {
     width: 400px;
   }

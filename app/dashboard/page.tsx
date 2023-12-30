@@ -77,7 +77,7 @@ export default function Dashboard() {
 									juga.
 								</p>
 								<Link href="/books">
-									<button className="bg-white rounded-xl border-2 border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 px-5 py-3 hover:bg-[#E2725B] hover:text-white">
+									<button className="bg-white rounded-xl border-2 border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 px-5 py-3 hover:bg-[#E2725B] hover:text-white hover:scale-105 transition hover:duration-300">
 										Pinjam Buku Yukk..
 									</button>
 								</Link>
@@ -136,6 +136,9 @@ export default function Dashboard() {
 			</div>
 			<hr className="sm:mb-10 text-black border" />
 			<Footer />
+			<div className="flex flex-col gap-5 group mx-2 cursor-pointer">
+				
+			</div>
 		</div>
 	);
 }

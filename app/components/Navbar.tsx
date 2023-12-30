@@ -43,33 +43,36 @@ export default function NavigationBar() {
 		return activePath === path;
 	};
 
+	const linkClassName = (path: string) =>
+		`relative hover:border-b-2 hover:border-[#E2725B] hover:text-[#E2725B] hover:font-bold ${
+			isActive(path)
+				? "border-b-2 border-[#E2725B] text-[#E2725B] font-bold"
+				: "hover:border-transparent border-expand"
+		} transition-all duration-150`;
+
 	return (
 		<Navbar shouldHideOnScroll className="hidden border-b-2 xl:flex bg-white">
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
-						<h1 className="hidden font-major sm:block font-bold text-inherit">
-							b<span className="text-[#E2725B]">i</span>p
+						<h1 className="font-bold font-major text-inherit">
+							b<span className="text-[#E2725B]">I</span>p
 							<span className="text-[#E2725B]">E</span>rp
 						</h1>
 					</Link>
 				</NavbarBrand>
 			</NavbarContent>
-			<NavbarContent className="w-[100%] flex !justify-end gap-10">
-				<NavbarItem isActive={isActive("/dashboard")}>
-					<Link color="foreground" href="/dashboard">
-						Home
-					</Link>
+			<NavbarContent className="w-[100%] flex flex-row !justify-end items-center gap-10">
+				<NavbarItem className={linkClassName("/dashboard")}>
+					<Link href="/dashboard">Home</Link>
 				</NavbarItem>
-				<NavbarItem isActive={isActive("/books")}>
+				<NavbarItem className={linkClassName("/books")}>
 					<Link href="/books" aria-current="page">
 						Buku
 					</Link>
 				</NavbarItem>
-				<NavbarItem isActive={isActive("/history")}>
-					<Link color="foreground" href="/history">
-						Riwayat
-					</Link>
+				<NavbarItem className={linkClassName("/history")}>
+					<Link href="/history">Riwayat</Link>
 				</NavbarItem>
 			</NavbarContent>
 

@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<Head>
+			<head>
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Major+Mono+Display:wght@400;700&display=swap"
@@ -26,7 +26,7 @@ export default function RootLayout({
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
 				/>
-			</Head>
+			</head>
 			<body className={inter.className}>{children}</body>
 		</html>
 	);
