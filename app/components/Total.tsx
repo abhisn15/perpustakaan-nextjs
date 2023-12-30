@@ -26,32 +26,32 @@ const useCounter = (total: number, startCounting: boolean) => {
 };
 
 export default function Total() {
-	    const [startCounting, setStartCounting] = useState(false);
-			const containerRef = useRef(null);
+	const [startCounting, setStartCounting] = useState(false);
+	const containerRef = useRef(null);
 
-			useEffect(() => {
-				const observer = new IntersectionObserver((entries) => {
-					const [entry] = entries;
-					if (entry.isIntersecting) {
-						setStartCounting(true);
-						observer.unobserve(entry.target); 
-					}
-				});
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			const [entry] = entries;
+			if (entry.isIntersecting) {
+				setStartCounting(true);
+				observer.unobserve(entry.target);
+			}
+		});
 
-				if (containerRef.current) {
-					observer.observe(containerRef.current);
-				}
+		if (containerRef.current) {
+			observer.observe(containerRef.current);
+		}
 
-				return () => {
-					if (containerRef.current) {
-						observer.unobserve(containerRef.current);
-					}
-				};
-			}, []);
+		return () => {
+			if (containerRef.current) {
+				observer.unobserve(containerRef.current);
+			}
+		};
+	}, []);
 
-			const totalBuku = useCounter(2000, startCounting);
-			const totalUser = useCounter(2000, startCounting);
-			const totalPinjam = useCounter(2000, startCounting);
+	const totalBuku = useCounter(2000, startCounting);
+	const totalUser = useCounter(2000, startCounting);
+	const totalPinjam = useCounter(2000, startCounting);
 	return (
 		<div
 			ref={containerRef}

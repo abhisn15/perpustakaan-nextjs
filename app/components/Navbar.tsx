@@ -44,9 +44,9 @@ export default function NavigationBar() {
 	};
 
 	const linkClassName = (path: string) =>
-		`relative hover:border-b-2 hover:border-[#E2725B] hover:text-[#E2725B] hover:font-bold ${
+		`relative hover:border-b-2 hover:border-[#E2725B] hover:text-[#E2725B]  ${
 			isActive(path)
-				? "border-b-2 border-[#E2725B] text-[#E2725B] font-bold"
+				? "border-b-2 border-[#E2725B] text-[#E2725B] "
 				: "hover:border-transparent border-expand"
 		} transition-all duration-150`;
 
