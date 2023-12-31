@@ -11,40 +11,42 @@ datasource db {
 }
 
 enum Role {
-ADMIN
-USER
+  ADMIN
+  USER
 }
 
 model users {
-  id Int @id @default(autoincrement())
-  username String
-  email String @unique
-  password String
-  role Role @default(USER)
-  validate Boolean
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  validate  Boolean
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
-  loans Loan[]
+  updateAt  DateTime @updatedAt
+  loans     Loan[]
 }
 
 model Book {
-  id        Int      @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   title     String
   author    String
-  isbn      String   @unique
-  available Boolean  @default(true)
+  genre     String
+  imageUrl  String?
+  isbn      String  @unique
+  available Boolean @default(true)
   loans     Loan[]
 }
 
 model Loan {
-  id           Int      @id @default(autoincrement())
-  userId       Int
-  bookId       Int
-  borrowedAt   DateTime @default(now())
-  dueDate      DateTime
-  returnedAt   DateTime?
-  fine         Int      @default(0)
-  approved     Boolean  @default(false)
-  user         users    @relation(fields: [userId], references: [id])
-  book         Book     @relation(fields: [bookId], references: [id])
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  bookId     Int
+  borrowedAt DateTime  @default(now())
+  dueDate    DateTime
+  returnedAt DateTime?
+  fine       Int       @default(0)
+  approved   Boolean   @default(false)
+  user       users     @relation(fields: [userId], references: [id])
+  book       Book      @relation(fields: [bookId], references: [id])
 }

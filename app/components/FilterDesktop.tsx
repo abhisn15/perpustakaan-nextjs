@@ -64,18 +64,16 @@ const FilterDesktop: React.FC<filterProps> = ({ OnFilter }) => {
 				<h1 className="font-poppins text-xl font-medium">Genre</h1>
 				<div className="flex flex-wrap gap-2 my-4">
 					{genre.map((GenreList) => (
-						<>
-							<button
-								key={GenreList.id}
-								onClick={() => handleGenreSelection(GenreList.name)}
-								className={`py-1 px-5 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 hover:scale-105 hover:duration-500 transition ${
-									activeGenre === GenreList.name
-										? "bg-[#E2725B] text-white scale-105"
-										: "hover:bg-[#E2725B] hover:text-white"
-								}`}>
-								{GenreList.name}
-							</button>
-						</>
+						<button
+							key={GenreList.id}
+							onClick={() => handleGenreSelection(GenreList.name)}
+							className={`py-1 px-5 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 hover:scale-105 hover:duration-500 transition ${
+								activeGenre === GenreList.name
+									? "bg-[#E2725B] text-white scale-105"
+									: "hover:bg-[#E2725B] hover:text-white"
+							}`}>
+							{GenreList.name}
+						</button>
 					))}
 				</div>
 			</div>

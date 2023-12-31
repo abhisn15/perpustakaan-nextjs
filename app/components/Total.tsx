@@ -26,10 +26,37 @@ const useCounter = (total: number, startCounting: boolean) => {
 };
 
 export default function Total() {
+	const [totalBuku, setTotalBuku] = useState(0);
+	const [totalUser, setTotalUser] = useState(0);
+	const [totalPinjam, setTotalPinjam] = useState(0);
 	const [startCounting, setStartCounting] = useState(false);
 	const containerRef = useRef(null);
 
+	async function fetchData() {
+		try {
+			const [booksRes, usersRes, loansRes] = await Promise.all([
+				fetch("/api/totalBooks"),
+				fetch("/api/totalUsers"),
+				fetch("/api/totalPinjam"),
+			]);
+
+			if (!booksRes.ok || !usersRes.ok || !loansRes.ok) {
+				throw new Error("Salah satu atau lebih API gagal");
+			}
+
+			const booksData = await booksRes.json();
+			const usersData = await usersRes.json();
+			const loansData = await loansRes.json();
+
+			setTotalBuku(booksData.data ?? 0);
+			setTotalUser(usersData.data ?? 0);
+			setTotalPinjam(loansData.data ?? 0);
+		} catch (error) {
+			console.error("Fetch error:", error);
+		}
+	}
 	useEffect(() => {
+		fetchData(); // Memanggil fetchData saat komponen dimuat
 		const observer = new IntersectionObserver((entries) => {
 			const [entry] = entries;
 			if (entry.isIntersecting) {
@@ -49,9 +76,6 @@ export default function Total() {
 		};
 	}, []);
 
-	const totalBuku = useCounter(2000, startCounting);
-	const totalUser = useCounter(2000, startCounting);
-	const totalPinjam = useCounter(2000, startCounting);
 	return (
 		<div
 			ref={containerRef}

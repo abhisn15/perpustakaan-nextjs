@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Filter from "../components/Filter";
-import FilterDesktop from "../components/FilterDesktop";
+import Filter from "./Filter";
+import FilterDesktop from "./FilterDesktop";
 
 export default function BukuStore() {
 	const [selectedGenre, setSelectedGenre] = useState<string | null>(null);

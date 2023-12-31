@@ -10,7 +10,7 @@ type FilterProps = {
 const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 	const [isFullOpen, setIsFullOpen] = useState(false);
 	const [activeGenre, setActiveGenre] = useState<string | null>(null);
-	
+
 	const closeFullBottomSheet = () => {
 		setIsFullOpen(false);
 	};
@@ -90,18 +90,16 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 								<h1 className="font-poppins font-bold text-xl">Genre</h1>
 								<div className="flex flex-wrap gap-2 my-4">
 									{genre.map((GenreList) => (
-										<>
-											<button
-												key={GenreList.id}
-												onClick={() => handleGenreSelection(GenreList.name)}
-												className={`py-1  px-4 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 ${
-													activeGenre === GenreList.name
-														? "bg-[#E2725B] text-white"
-														: "hover:bg-[#E2725B] hover:text-white"
-												}`}>
-												{GenreList.name}
-											</button>
-										</>
+										<button
+											key={GenreList.id}
+											onClick={() => handleGenreSelection(GenreList.name)}
+											className={`py-1  px-4 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 ${
+												activeGenre === GenreList.name
+													? "bg-[#E2725B] text-white"
+													: "hover:bg-[#E2725B] hover:text-white"
+											}`}>
+											{GenreList.name}
+										</button>
 									))}
 								</div>
 							</div>
