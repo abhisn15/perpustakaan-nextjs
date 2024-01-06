@@ -14,10 +14,10 @@ export default function Books() {
 			<div className="">
 				<NavigationBar />
 				<NavbarMobile />
-					<BukuStore />
-					<hr className="border"></hr>
-					<Footer />
-				</div>
+				<BukuStore />
+			</div>
+			<hr className="sm:mb-10 text-black border" />
+			<Footer />
 		</div>
 	);
 }

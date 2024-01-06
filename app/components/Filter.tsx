@@ -86,7 +86,7 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 							Filter
 						</BottomSheet.Title>
 						<div className="w-[100%] bg-jiren font-poppins overflow-auto">
-							<div className="w-[90%] flex flex-col justify-start items-start mx-4">
+							<div className=" flex flex-col justify-start items-start mx-4">
 								<h1 className="font-poppins font-bold text-xl">Genre</h1>
 								<div className="flex flex-wrap gap-2 my-4">
 									{genre.map((GenreList) => (

@@ -1,9 +1,8 @@
 "use client";
-import { FaHeart } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<footer className="min-[320px]:h-[16vh] my-6 sm:my-0 min-[764px]:h-[5vh]">
+		<footer className="min-[320px]:h-[16vh] my-6 sm:my-0 min-[764px]:h-[16vh]">
 			<small className="flex flex-row gap-2 justify-center items-center">
 				&copy; {new Date().getFullYear()} Developed by -{" "}
 				<a
