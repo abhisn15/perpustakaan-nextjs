@@ -4,26 +4,7 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 
-const useCounter = (total: number, startCounting: boolean) => {
-	const [count, setCount] = useState(0);
 
-	useEffect(() => {
-		if (!startCounting) return;
-
-		let start = 0;
-		const end = total / 100;
-
-		const interval = setInterval(() => {
-			start += end;
-			if (start > total) start = total;
-			setCount(start);
-		}, 20);
-
-		return () => clearInterval(interval);
-	}, [total, startCounting]);
-
-	return Math.floor(count);
-};
 
 export default function Total() {
 	const [totalBuku, setTotalBuku] = useState(0);
