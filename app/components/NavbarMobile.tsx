@@ -36,8 +36,8 @@ export default function NavbarMobile() {
 			<NavbarBrand className="flex justify-between gap-2">
 				<Link href="/dashboard">
 					<h1 className="font-bold font-major text-inherit">
-						b<span className="text-[#E2725B]">I</span>p
-						<span className="text-[#E2725B]">E</span>rp
+						b<span className="text-[#9A3412]">I</span>p
+						<span className="text-[#9A3412]">E</span>rp
 					</h1>
 				</Link>
 				<Input
@@ -55,7 +55,7 @@ export default function NavbarMobile() {
 					type="search"
 				/>
 				<div>
-					<Button onClick={handleOpen}>
+					<Button onClick={handleOpen} title="chart">
 						{" "}
 						<ShoppingCartIcon sx={{ fontSize: "30px", color: "black" }} />
 					</Button>

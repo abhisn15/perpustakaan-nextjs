@@ -76,7 +76,7 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 				<Button
 					variant="outline"
 					onClick={openFullBottomSheet}
-					className="rounded-xl gap-0 border-2 border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 px-5 hover:bg-[#E2725B] hover:text-white flex flex-row justify-center items-center">
+					className="rounded-xl gap-0 border-2 border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 px-5 hover:bg-[#9A3412] hover:text-white flex flex-row justify-center items-center">
 					<FilterListIcon sx={{ fontSize: 28 }} />
 					<h1 className="font-poppins font-medium text-[16px]">Filter</h1>
 				</Button>
@@ -95,8 +95,8 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 											onClick={() => handleGenreSelection(GenreList.name)}
 											className={`py-1  px-4 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 ${
 												activeGenre === GenreList.name
-													? "bg-[#E2725B] text-white"
-													: "hover:bg-[#E2725B] hover:text-white"
+													? "bg-[#9A3412] text-white"
+													: "hover:bg-[#9A3412] hover:text-white"
 											}`}>
 											{GenreList.name}
 										</button>

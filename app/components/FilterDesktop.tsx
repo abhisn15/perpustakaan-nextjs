@@ -69,8 +69,8 @@ const FilterDesktop: React.FC<filterProps> = ({ OnFilter }) => {
 							onClick={() => handleGenreSelection(GenreList.name)}
 							className={`py-1 px-5 rounded-xl border border-[#ffa08d] border-solid shadow-2xl font-poppins shadow-red-100 hover:scale-105 hover:duration-500 transition ${
 								activeGenre === GenreList.name
-									? "bg-[#E2725B] text-white scale-105"
-									: "hover:bg-[#E2725B] hover:text-white"
+									? "bg-[#9A3412] text-white scale-105"
+									: "hover:bg-[#9A3412] hover:text-white"
 							}`}>
 							{GenreList.name}
 						</button>

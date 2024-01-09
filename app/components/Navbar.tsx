@@ -44,9 +44,9 @@ export default function NavigationBar() {
 	};
 
 	const linkClassName = (path: string) =>
-		`relative hover:border-b-2 hover:border-[#E2725B] hover:text-[#E2725B]  ${
+		`relative hover:border-b-2 hover:border-[#9A3412] hover:text-[#9A3412]  ${
 			isActive(path)
-				? "border-b-2 border-[#E2725B] text-[#E2725B] "
+				? "border-b-2 border-[#9A3412] text-[#9A3412] "
 				: "hover:border-transparent border-expand"
 		} transition-all duration-150`;
 
@@ -56,8 +56,8 @@ export default function NavigationBar() {
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
 						<h1 className="font-bold font-major text-inherit">
-							b<span className="text-[#E2725B]">I</span>p
-							<span className="text-[#E2725B]">E</span>rp
+							b<span className="text-[#9A3412]">I</span>p
+							<span className="text-[#9A3412]">E</span>rp
 						</h1>
 					</Link>
 				</NavbarBrand>
@@ -91,7 +91,7 @@ export default function NavigationBar() {
 					startContent={<SearchIcon size={18} />}
 					type="search"
 				/>
-				<Button onClick={handleOpen}>
+				<Button onClick={handleOpen} title="chart">
 					{" "}
 					<ShoppingCartIcon sx={{ fontSize: "30px", color: "black" }} />
 				</Button>

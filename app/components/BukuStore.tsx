@@ -138,7 +138,7 @@ export default function BukuStore() {
 								<button
 									data-ripple-light="true"
 									type="button"
-									className="select-none rounded-lg bg-[#E2725B] py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+									className="select-none rounded-lg bg-[#9A3412] py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
 									<h1 className="font-poppins">
 										<span className="text-md">+</span> Keranjang
 									</h1>
