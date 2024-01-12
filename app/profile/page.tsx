@@ -3,6 +3,7 @@ import BottomNav from "../components/BottomNav";
 import NavbarMobile from "../components/NavbarMobile";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/footer";
+import Link from "next/link";
 
 export default function ProfileUser() {
 	return (
@@ -14,7 +15,7 @@ export default function ProfileUser() {
 				<NavigationBar />
 				<NavbarMobile />
 				<div className="h-[100dvh] my-10">
-					<h1 className="text-center text-xl mx-2 md:text-3xl xl:text-4xl font-major mb-10">
+					<h1 className="text-center text-xl mx-2 md:text-3xl xl:text-4xl font-poppins mb-10">
 						Profile
 					</h1>
 					<div className="flex justify-center">
@@ -26,8 +27,16 @@ export default function ProfileUser() {
 								Abhi Surya Nugroho
 							</h1>
 							<div className="flex flex-col gap-2">
-								<div className="bg-white rounded-lg py-3 px-4 border font-poppins cursor-pointer hover:bg-orange-500 hover:text-white">Edit Profile</div>
-								<div className="bg-white rounded-lg py-3 px-4 border cursor-pointer hover:bg-red-400 hover:text-white font-poppins">LOGOUT</div>
+								<Link
+									href="/"
+									className="bg-white rounded-lg py-3 px-4 border text-center font-poppins cursor-pointer hover:bg-orange-500 hover:text-white">
+									<button className="">Edit Profile</button>
+								</Link>
+								<Link
+									href="/"
+									className="bg-white rounded-lg py-3 px-4 border text-center font-poppins cursor-pointer hover:bg-orange-500 hover:text-white xl:hidden">
+									<button className="">LOGOUT</button>
+								</Link>
 							</div>
 						</div>
 					</div>

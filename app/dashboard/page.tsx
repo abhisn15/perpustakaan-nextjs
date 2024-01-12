@@ -67,8 +67,9 @@ export default function Dashboard() {
 								height="200"
 							/>
 							<div className="flex flex-col justify-center items-center gap-10">
-								<h1 className="font-major font-bold text-xl sm:text-2xl">
-									SeLamaT daTanG dI WebSite PerpusTaKaan Kami
+								<h1 className="font-major font-bold text-xl sm:text-3xl">
+									SeLamaT <span className="text-[#9A3412]">Abhi</span> daTanG dI
+									WebSite PerpusTaKaan Kami
 								</h1>
 								<p className="mx-14 font-poppins text-center xl:w-[70%]">
 									Pinjam buku dengan mudah menggunakan website perpustakaan
@@ -124,9 +125,7 @@ export default function Dashboard() {
 									data-ripple-light="true"
 									type="button"
 									className="select-none rounded-lg bg-[#9A3412] py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-									<h1 className="font-poppins">
-										<span className="text-md">+</span> Keranjang
-									</h1>
+									<h1 className="font-sans">PINJAM</h1>
 								</button>
 							</div>
 						</div>

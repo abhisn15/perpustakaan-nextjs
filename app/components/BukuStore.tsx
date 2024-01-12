@@ -121,16 +121,16 @@ export default function BukuStore() {
 								</div>
 							</div>
 							<div className="p-6 flex flex-col justify-center text-center">
-								<h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+								<h5 className="mb-2 block font-poppins text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
 									{buku.judul}
 								</h5>
-								<p className="block mt-2 font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+								<p className="block mt-2 font-poppins text-base font-normal leading-relaxed text-inherit antialiased">
 									Penulis: {buku.name}
 								</p>
-								<p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+								<p className="block font-poppins text-base font-normal leading-relaxed text-inherit antialiased">
 									Genre: {buku.genre}
 								</p>
-								<p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+								<p className="block font-poppins text-base font-light leading-relaxed text-inherit antialiased">
 									{buku.desk}
 								</p>
 							</div>
@@ -138,7 +138,7 @@ export default function BukuStore() {
 								<button
 									data-ripple-light="true"
 									type="button"
-									className="select-none rounded-lg bg-[#9A3412] py-3 px-6 text-center align-middle font-sans text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+									className="select-none rounded-lg bg-[#9A3412] py-3 px-6 text-center align-middle font-poppins text-xs font-medium text-white shadow-md shadow-slate-500 transition-all hover:shadow-lg hover:shadow-slate-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
 									<h1 className="font-poppins">
 										<span className="text-md">+</span> Keranjang
 									</h1>

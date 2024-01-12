@@ -15,38 +15,65 @@ enum Role {
   USER
 }
 
+enum LoanStatus {
+  PENDING
+  APPROVED
+  RETURNED
+}
+
 model users {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   username  String
-  email     String   @unique
+  email     String    @unique
   password  String
-  role      Role     @default(USER)
+  role      Role      @default(USER)
   validate  Boolean
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updateAt  DateTime  @updatedAt
   loans     Loan[]
+  history   History[]
 }
 
 model Book {
-  id        Int     @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   title     String
   author    String
   genre     String
   imageUrl  String?
-  isbn      String  @unique
-  available Boolean @default(true)
+  desk      String
+  isbn      String    @unique
+  available Boolean   @default(true)
   loans     Loan[]
+  history   History[]
+}
+
+model History {
+  id         Int       @id @default(autoincrement())
+  loanId     Int
+  userId     Int
+  bookId     Int
+  title      String // Judul buku
+  author     String // Penulis buku
+  genre      String // Genre buku
+  borrowedAt DateTime // Tanggal peminjaman
+  dueDate    DateTime // Batas waktu peminjaman
+  returnedAt DateTime? // Tanggal pengembalian
+  fine       Int       @default(0) // Denda
+  loan       Loan      @relation(fields: [loanId], references: [id])
+  user       users     @relation(fields: [userId], references: [id])
+  book       Book      @relation(fields: [bookId], references: [id])
 }
 
 model Loan {
-  id         Int       @id @default(autoincrement())
+  id         Int        @id @default(autoincrement())
   userId     Int
   bookId     Int
-  borrowedAt DateTime  @default(now())
+  borrowedAt DateTime   @default(now())
   dueDate    DateTime
   returnedAt DateTime?
-  fine       Int       @default(0)
-  approved   Boolean   @default(false)
-  user       users     @relation(fields: [userId], references: [id])
-  book       Book      @relation(fields: [bookId], references: [id])
+  status     LoanStatus @default(PENDING)
+  fine       Int        @default(0)
+  user       users      @relation(fields: [userId], references: [id])
+  book       Book       @relation(fields: [bookId], references: [id])
+  history    History[]
 }

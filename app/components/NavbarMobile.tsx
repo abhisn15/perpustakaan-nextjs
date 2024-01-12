@@ -36,8 +36,8 @@ export default function NavbarMobile() {
 			<NavbarBrand className="flex justify-between gap-2">
 				<Link href="/dashboard">
 					<h1 className="font-bold font-major text-inherit">
-						b<span className="text-[#9A3412]">I</span>p
-						<span className="text-[#9A3412]">E</span>rp
+						B<span className="text-[#9A3412]">I</span>P
+						<span className="text-[#9A3412]">E</span>RP
 					</h1>
 				</Link>
 				<Input
@@ -50,30 +50,10 @@ export default function NavbarMobile() {
 					}}
 					placeholder="Search.."
 					size="sm"
-					className="border-2 rounded-md mr-2"
+					className="border-2 rounded-md ml-4"
 					startContent={<SearchIcon size={18} />}
 					type="search"
 				/>
-				<div>
-					<Button onClick={handleOpen} title="chart">
-						{" "}
-						<ShoppingCartIcon sx={{ fontSize: "30px", color: "black" }} />
-					</Button>
-					<Modal
-						open={open}
-						onClose={handleClose}
-						aria-labelledby="modal-modal-title"
-						aria-describedby="modal-modal-description">
-						<Box sx={style}>
-							<Typography id="modal-modal-title" variant="h6" component="h2">
-								Text in a modal
-							</Typography>
-							<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-								Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-							</Typography>
-						</Box>
-					</Modal>
-				</div>
 			</NavbarBrand>
 		</Navbar>
 	);

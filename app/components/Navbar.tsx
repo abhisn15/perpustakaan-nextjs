@@ -31,9 +31,6 @@ const style = {
 
 export default function NavigationBar() {
 	const [activePath, setActivePath] = useState("");
-	const [open, setOpen] = React.useState(false);
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
 
 	useEffect(() => {
 		setActivePath(window.location.pathname);
@@ -55,9 +52,9 @@ export default function NavigationBar() {
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
-						<h1 className="font-bold font-major text-inherit">
-							b<span className="text-[#9A3412]">I</span>p
-							<span className="text-[#9A3412]">E</span>rp
+						<h1 className="font-bold font-poppins text-inherit">
+							B<span className="text-[#9A3412]">I</span>P
+							<span className="text-[#9A3412]">E</span>RP
 						</h1>
 					</Link>
 				</NavbarBrand>
@@ -91,24 +88,7 @@ export default function NavigationBar() {
 					startContent={<SearchIcon size={18} />}
 					type="search"
 				/>
-				<Button onClick={handleOpen} title="chart">
-					{" "}
-					<ShoppingCartIcon sx={{ fontSize: "30px", color: "black" }} />
-				</Button>
-				<Modal
-					open={open}
-					onClose={handleClose}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description">
-					<Box sx={style}>
-						<Typography id="modal-modal-title" variant="h6" component="h2">
-							Text in a modal
-						</Typography>
-						<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-						</Typography>
-					</Box>
-				</Modal>
+				
 				<Dropdown placement="bottom-end">
 					<DropdownTrigger>
 						<Avatar
@@ -140,7 +120,7 @@ export default function NavigationBar() {
 							key="logout"
 							color="danger"
 							className="rounded-md hover:bg-red-500 hover:text-white">
-							<Link className="w-[100%]" href="/profile">
+							<Link className="w-[100%]" href="/">
 								<p>Log Out</p>
 							</Link>
 						</DropdownItem>
