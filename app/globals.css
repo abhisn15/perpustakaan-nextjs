@@ -48,6 +48,10 @@ html {
   monospace;
 }
 
+.data-\[justify\=start\]\:flex-grow[data-justify=start] {
+  flex-grow: 0 !important;
+}
+
 @layer components {
   .border-expand::after {
     content: '';

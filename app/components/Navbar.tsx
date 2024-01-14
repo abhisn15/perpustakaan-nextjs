@@ -16,6 +16,7 @@ import { SearchIcon } from "./SearchIcon";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
 import { Box, Button, Modal, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const style = {
 	position: "absolute" as "absolute",
@@ -31,6 +32,13 @@ const style = {
 
 export default function NavigationBar() {
 	const [activePath, setActivePath] = useState("");
+	const [searchTerm, setSearchTerm] = useState("");
+	const router = useRouter();
+
+	const handleSearch = () => {
+		// Redirect to the search results page with the entered search term
+		router.push(`/search=${searchTerm}`);
+	};
 
 	useEffect(() => {
 		setActivePath(window.location.pathname);
@@ -48,18 +56,20 @@ export default function NavigationBar() {
 		} transition-all duration-150`;
 
 	return (
-		<Navbar shouldHideOnScroll className="hidden border-b-2 xl:flex bg-white">
+		<Navbar
+			shouldHideOnScroll
+			className="hidden border-b-2 xl:flex xl:flex-row xl:justify-evenly xl:items-center xl:w-[100%] bg-white">
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
 					<Link href="/dashboard">
-						<h1 className="font-bold font-poppins text-inherit">
-							B<span className="text-[#9A3412]">I</span>P
-							<span className="text-[#9A3412]">E</span>RP
+						<h1 className="font-bold w-10 font-major text-xl text-inherit">
+							b<span className="text-[#9A3412]">I</span>p
+							<span className="text-[#9A3412]">E</span>rp
 						</h1>
 					</Link>
 				</NavbarBrand>
 			</NavbarContent>
-			<NavbarContent className="w-[100%] flex flex-row !justify-end items-center gap-10">
+			<NavbarContent className="flex flex-row gap-10">
 				<NavbarItem className={linkClassName("/dashboard")}>
 					<Link href="/dashboard">Home</Link>
 				</NavbarItem>
@@ -73,22 +83,7 @@ export default function NavigationBar() {
 				</NavbarItem>
 			</NavbarContent>
 
-			<NavbarContent as="div" className="items-center" justify="end">
-				<Input
-					classNames={{
-						base: "max-w-full sm:max-w-[10rem] h-10",
-						mainWrapper: "h-full",
-						input: "text-small",
-						inputWrapper:
-							"h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-					}}
-					className="border-2 rounded-md"
-					placeholder="Type to search..."
-					size="sm"
-					startContent={<SearchIcon size={18} />}
-					type="search"
-				/>
-				
+			<NavbarContent as="div" className="">
 				<Dropdown placement="bottom-end">
 					<DropdownTrigger>
 						<Avatar
@@ -98,7 +93,7 @@ export default function NavigationBar() {
 							color="secondary"
 							name="Jason Hughes"
 							size="sm"
-							src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+							src="/profile.avif"
 						/>
 					</DropdownTrigger>
 					<DropdownMenu

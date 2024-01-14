@@ -64,7 +64,7 @@ export default function Total() {
 			<div className="bg-white mx-5 sm:mx-0 rounded-xl drop-shadow-xl border px-5 py-5 flex flex-row justify-center items-center gap-5 md:gap-20">
 				<div className="flex flex-col justify-center items-center gap-2">
 					<LibraryBooksIcon className="text-[30px] md:text-[35px]" />
-					<h1 className="font-poppins font-extrabold text-center text-[9px] md:text-[15px]">
+					<h1 className="font-major font-extrabold text-center text-[9px] md:text-[15px]">
 						Total buku
 					</h1>
 					<p className="font-poppins font-bold text-xs md:text-xl">
@@ -73,7 +73,7 @@ export default function Total() {
 				</div>
 				<div className="flex flex-col justify-center items-center gap-2">
 					<PeopleAltIcon className="text-[30px] md:text-[35px]" />
-					<h1 className="font-poppins font-extrabold text-center text-[9px] md:text-[15px]">
+					<h1 className="font-major font-extrabold text-center text-[9px] md:text-[15px]">
 						Total user
 					</h1>
 					<p className="font-poppins font-bold text-xs md:text-xl">
@@ -82,7 +82,7 @@ export default function Total() {
 				</div>
 				<div className="flex flex-col justify-center items-center gap-2">
 					<ReceiptLongIcon className="text-[30px] md:text-[35px]" />
-					<h1 className="font-poppins font-extrabold text-center text-[9px] md:text-[15px]">
+					<h1 className="font-major font-extrabold text-center text-[9px] md:text-[15px]">
 						Total pinjam
 					</h1>
 					<p className="font-poppins font-bold text-xs md:text-xl">

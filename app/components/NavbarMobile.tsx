@@ -33,27 +33,13 @@ export default function NavbarMobile() {
 	};
 	return (
 		<Navbar shouldHideOnScroll className="xl:hidden border-b-2 bg-white">
-			<NavbarBrand className="flex justify-between gap-2">
+			<NavbarBrand className="flex justify-center gap-2">
 				<Link href="/dashboard">
-					<h1 className="font-bold font-major text-inherit">
-						B<span className="text-[#9A3412]">I</span>P
-						<span className="text-[#9A3412]">E</span>RP
+					<h1 className="font-bold text-3xl font-major text-inherit">
+						b<span className="text-[#9A3412]">I</span>p
+						<span className="text-[#9A3412]">E</span>rp
 					</h1>
 				</Link>
-				<Input
-					classNames={{
-						base: "max-w-full sm:max-w-[20rem] h-10",
-						mainWrapper: "h-full",
-						input: "text-small",
-						inputWrapper:
-							"h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-					}}
-					placeholder="Search.."
-					size="sm"
-					className="border-2 rounded-md ml-4"
-					startContent={<SearchIcon size={18} />}
-					type="search"
-				/>
 			</NavbarBrand>
 		</Navbar>
 	);
