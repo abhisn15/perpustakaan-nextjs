@@ -61,12 +61,14 @@ export default function NavigationBar() {
 			className="hidden border-b-2 xl:flex xl:flex-row xl:justify-evenly xl:items-center xl:w-[100%] bg-white">
 			<NavbarContent justify="center">
 				<NavbarBrand className="mr-4">
-					<Link href="/dashboard">
-						<h1 className="font-bold w-10 font-major text-xl text-inherit">
-							b<span className="text-[#9A3412]">I</span>p
-							<span className="text-[#9A3412]">E</span>rp
-						</h1>
-					</Link>
+					<abbr title="ABHI PERPUSTAKAAN" className="decoration-none">
+						<Link href="/dashboard">
+							<h1 className="font-bold w-10 font-major text-xl text-inherit">
+								b<span className="text-[#9A3412]">I</span>p
+								<span className="text-[#9A3412]">E</span>rp
+							</h1>
+						</Link>
+					</abbr>
 				</NavbarBrand>
 			</NavbarContent>
 			<NavbarContent className="flex flex-row gap-10">
