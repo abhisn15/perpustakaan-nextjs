@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { genre } from '../data';
 
 interface filterProps {
 	OnFilter: (genre: string | null) => void;
@@ -6,45 +7,6 @@ interface filterProps {
 
 const FilterDesktop: React.FC<filterProps> = ({ OnFilter }) => {
 	const [activeGenre, setActiveGenre] = useState<string | null>(null);
-
-	const genre = [
-		{
-			id: "1",
-			name: "Horor",
-		},
-		{
-			id: "2",
-			name: "Misteri",
-		},
-		{
-			id: "3",
-			name: "Fiksi",
-		},
-		{
-			id: "4",
-			name: "Sains Fiksi",
-		},
-		{
-			id: "5",
-			name: "Non-Fiksi",
-		},
-		{
-			id: "6",
-			name: "Romansa",
-		},
-		{
-			id: "7",
-			name: "Drama",
-		},
-		{
-			id: "8",
-			name: "Sejarah",
-		},
-		{
-			id: "9",
-			name: "Fantasi",
-		},
-	];
 
 	const handleGenreSelection = (genreName: string) => {
 		if (activeGenre === genreName) {
@@ -58,11 +20,10 @@ const FilterDesktop: React.FC<filterProps> = ({ OnFilter }) => {
 		}
 	};
 	return (
-		<div className="">
-			<h1 className="font-poppins text-xl font-medium mb-2">Filter</h1>
+		<div className="mt-9">
 			<div className="shadow-xl border rounded-xl bg-white py-2 px-10 flex flex-col gap-4">
 				<h1 className="font-poppins text-xl font-medium">Genre</h1>
-				<div className="flex flex-wrap gap-2 my-4">
+				<div className="flex flex-wrap gap-2 mb-4">
 					{genre.map((GenreList) => (
 						<button
 							key={GenreList.id}

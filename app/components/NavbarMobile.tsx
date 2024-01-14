@@ -21,8 +21,6 @@ const style = {
 export default function NavbarMobile() {
 	const [activePath, setActivePath] = useState("");
 	const [open, setOpen] = React.useState(false);
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
 
 	useEffect(() => {
 		setActivePath(window.location.pathname);
@@ -35,7 +33,7 @@ export default function NavbarMobile() {
 		<Navbar shouldHideOnScroll className="xl:hidden border-b-2 bg-white">
 			<NavbarBrand className="flex justify-center gap-2">
 				<Link href="/dashboard">
-					<h1 className="font-bold text-3xl font-major text-inherit">
+					<h1 className="font-bold text-2xl font-major text-inherit">
 						b<span className="text-[#9A3412]">I</span>p
 						<span className="text-[#9A3412]">E</span>rp
 					</h1>

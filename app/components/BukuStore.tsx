@@ -15,7 +15,6 @@ export default function BukuStore() {
 		setSearchTerm(event.target.value);
 	};
 
-	// Filter books based on judul (title)
 	const cariBuku = getAllBuku.filter((buku) =>
 		buku.judul.toLowerCase().includes(searchTerm.toLowerCase()),
 	);
@@ -30,8 +29,8 @@ export default function BukuStore() {
 
 	return (
 		<div>
-			<div className="flex flex-row justify-center items-center mt-10">
-				<h1>Cari judul buku yang ingin kamu pinjam:</h1>
+			<div className="flex flex-row justify-center items-center mt-10 mx-10">
+				<h1>Cari judul buku :</h1>
 				<Input
 					classNames={{
 						base: "max-w-full sm:max-w-[20rem] h-10",
@@ -42,7 +41,7 @@ export default function BukuStore() {
 					}}
 					placeholder="Search.."
 					size="sm"
-					className="border-2 rounded-md ml-4 hover:border-[#9A3412] focus-within:border-[#9A3412]"
+					className="border-2 rounded-md ml-4 w-[50%] hover:border-[#9A3412] focus-within:border-[#9A3412]"
 					startContent={<SearchIcon size={18} />}
 					type="search"
 					onChange={handleSearch}
