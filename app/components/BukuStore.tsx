@@ -7,7 +7,8 @@ import { SearchIcon } from "./SearchIcon";
 import { Input } from "@nextui-org/react";
 
 export default function BukuStore() {
-	const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
+	const [selectedBuku, setSelectedBuku] = useState<string | null>(null);
+	const [selectedGenres, setSelectedGenres] = useState<string[] | null>(null);
 
 	const [searchTerm, setSearchTerm] = useState("");
 
@@ -20,11 +21,20 @@ export default function BukuStore() {
 	);
 
 	const handleGenreSelect = (genre: string | null) => {
-		setSelectedGenre(genre);
+		setSelectedBuku(genre);
+		 setSelectedGenres((prevGenres) => {
+				if (prevGenres && prevGenres.includes(genre)) {
+					// Deselect genre if already selected
+					return prevGenres.filter((selectedGenre) => selectedGenre !== genre);
+				} else {
+					// Select genre if not selected or add to selected genres
+					return prevGenres ? [...prevGenres, genre] : [genre];
+				}
+			});
 	};
 
-	const filteredBuku = selectedGenre
-		? cariBuku.filter((buku) => buku.genre === selectedGenre)
+	const filteredBuku = selectedBuku
+		? cariBuku.filter((buku) => buku.genre === selectedBuku)
 		: cariBuku;
 
 	return (
@@ -48,7 +58,7 @@ export default function BukuStore() {
 				/>
 			</div>
 			<div className="mx-5 my-5 xl:hidden">
-				<Filter onGenreSelect={handleGenreSelect} />
+				<Filter onGenreSelect={handleGenreSelect} selectedGenres={selectedGenres} />
 			</div>
 			<div className="flex flex-row xl:mx-20 gap-4 justify-center">
 				<div className="hidden relative bottom-9 xl:block mb-20 mt-16 xl:w-[50%] 2xl:w-[30%]">

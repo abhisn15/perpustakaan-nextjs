@@ -2,13 +2,15 @@
 import React, { useState } from "react";
 import { BottomSheet, Button } from "@heathmont/moon-core-tw";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { genre } from '../data';
+import { genre } from "../data";
+import { getAllBuku } from "../data";
 
 type FilterProps = {
 	onGenreSelect: (genre: string | null) => void;
+	selectedGenres: string[] | null;
 };
 
-const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
+const Filter: React.FC<FilterProps> = ({ onGenreSelect, selectedGenres }) => {
 	const [isFullOpen, setIsFullOpen] = useState(false);
 	const [activeGenre, setActiveGenre] = useState<string | null>(null);
 
@@ -31,6 +33,15 @@ const Filter: React.FC<FilterProps> = ({ onGenreSelect }) => {
 		}
 		closeFullBottomSheet();
 	};
+
+	const filteredBooks = selectedGenres
+		? getAllBuku.filter((book) => {
+				const bookGenres = book.genre.split(", ").map((genre) => genre.trim());
+				return selectedGenres.some((selectedGenre) =>
+					bookGenres.includes(selectedGenre),
+				);
+		  })
+		: getAllBuku;
 
 	return (
 		<>

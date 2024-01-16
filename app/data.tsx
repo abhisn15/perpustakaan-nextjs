@@ -3,7 +3,7 @@ export const getAllBuku = [
 		id: "1",
 		name: "Abhi Surya Nugroho",
 		judul: "Sikancil Anak yang Nakal",
-		genre: "Fiksi",
+		genre: "Fiksi, Horor",
 		img_book: "/buku.avif",
 		desk: "lorem ipsum dolor sit amet",
 	},
@@ -81,41 +81,41 @@ export const getAllBuku = [
 	},
 ];
 
-	export const genre = [
-		{
-			id: "1",
-			name: "Horor",
-		},
-		{
-			id: "2",
-			name: "Misteri",
-		},
-		{
-			id: "3",
-			name: "Fiksi",
-		},
-		{
-			id: "4",
-			name: "Sains Fiksi",
-		},
-		{
-			id: "5",
-			name: "Non-Fiksi",
-		},
-		{
-			id: "6",
-			name: "Romansa",
-		},
-		{
-			id: "7",
-			name: "Drama",
-		},
-		{
-			id: "8",
-			name: "Sejarah",
-		},
-		{
-			id: "9",
-			name: "Fantasi",
-		},
-	];
+export const genre = [
+	{
+		id: "1",
+		name: "Horor",
+	},
+	{
+		id: "2",
+		name: "Misteri",
+	},
+	{
+		id: "3",
+		name: "Fiksi",
+	},
+	{
+		id: "4",
+		name: "Sains Fiksi",
+	},
+	{
+		id: "5",
+		name: "Non-Fiksi",
+	},
+	{
+		id: "6",
+		name: "Romansa",
+	},
+	{
+		id: "7",
+		name: "Drama",
+	},
+	{
+		id: "8",
+		name: "Sejarah",
+	},
+	{
+		id: "9",
+		name: "Fantasi",
+	},
+];
