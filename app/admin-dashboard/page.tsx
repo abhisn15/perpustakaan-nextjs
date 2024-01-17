@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import NavigationAdmin from "../components/NavbarAdmin";
 
 export default function AdminDashboard() {
-  return (
-    <div className='flex flex-col justify-center items-center h-screen'>
-      <h1>INI HALAMAN DASHBOARD ADMIN</h1>
-    </div>
-  )
+	return (
+		<>
+			<NavigationAdmin />
+			<div className="flex flex-col justify-center items-center h-screen"></div>
+		</>
+	);
 }
